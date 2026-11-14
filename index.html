@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoot Anurag | Anurag Sahu - Reel Creator And Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== RESET & THEME VARIABLES ==================== */
+        :root {
+            --bg-obsidian: #08080a;
+            --bg-card: #14110d;
+            --bg-card-elevated: #1c1711;
+            --border-gold: rgba(212, 175, 55, 0.28);
+            --border-gold-strong: rgba(245, 198, 69, 0.65);
+            --gold-light: #fde68a;
+            --gold-mid: #e6be6a;
+            --gold-rich: #c8963e;
+            --gold-deep: #9e6f21;
+            --text-main: #f8f5ef;
+            --text-muted: #a89f91;
+            --font-display: 'Cinzel', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-obsidian);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+        }
+
+        body {
+            background-color: var(--bg-obsidian);
+            background-image:
+                radial-gradient(circle at 20% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 45%, rgba(200, 150, 62, 0.07) 0%, transparent 45%),
+                radial-gradient(circle at 50% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+            color: var(--text-main);
+            line-height: 1.5;
+            overflow-x: hidden;
+            padding-bottom: 86px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: inherit;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* ==================== UTILITY & GOLD BUTTONS ==================== */
+        .container {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .gold-text {
+            background: linear-gradient(135deg, #fff0b3 0%, #e7be6a 45%, #b88228 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gold-btn {
+            background: linear-gradient(135deg, #edd085 0%, #c8963e 55%, #a77422 100%);
+            color: #120d06;
+            font-weight: 700;
+            border: 1px solid #f7df9c;
+            box-shadow: 0 6px 24px rgba(200, 150, 62, 0.28);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+        }
+
+        .gold-btn:hover {
+            filter: brightness(1.06);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.42);
+        }
+
+        .gold-btn:active {
+            transform: scale(0.98);
+        }
+
+        .outline-gold-btn {
+            background: rgba(20, 17, 13, 0.92);
+            color: var(--gold-mid);
+            font-weight: 700;
+            border: 1px solid var(--border-gold-strong);
+            transition: background 0.18s ease, transform 0.18s ease;
+        }
+
+        .outline-gold-btn:hover {
+            background: rgba(212, 175, 55, 0.14);
+        }
+
+        /* ==================== 1. HEADER & 3-LINE HAMBURGER MENU ==================== */
+        .top-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8, 8, 10, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .header-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .brand-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gold-mid);
+            overflow: hidden;
+            background: radial-gradient(circle, #2a1f10 0%, #0d0b08 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .brand-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* Desktop Links */
+        .desktop-nav {
+            display: none;
+            align-items: center;
+            gap: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .desktop-nav {
+                display: flex;
+            }
+            .hamburger-btn {
+                display: none !important;
+            }
+        }
+
+        .nav-link {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            padding: 7px 13px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-light);
+            border-color: var(--border-gold);
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        /* 3-Line Hamburger Button */
+        .hamburger-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #14100b;
+            border: 1px solid var(--border-gold-strong);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .hamburger-btn:hover {
+            background: rgba(212, 175, 55, 0.14);
+        }
+
+        .hamburger-line {
+            width: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, #fff0b3, #c8963e);
+            border-radius: 2px;
+            transition: transform 0.25s ease, opacity 0.2s ease;
+        }
+
+        .hamburger-btn.open .hamburger-line:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .hamburger-btn.open .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-btn.open .hamburger-line:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile Dropdown Drawer */
+        .mobile-drawer {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            padding: 12px 16px 16px;
+            background: #0e0b08;
+            border-top: 1px solid var(--border-gold);
+        }
+
+        .mobile-drawer.open {
+            display: flex;
+        }
+
+        .mobile-drawer-link {
+            padding: 11px 14px;
+            border-radius: 12px;
+            background: #15110c;
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mobile-drawer-link:hover {
+            border-color: var(--gold-mid);
+            color: var(--gold-light);
+        }
+
+        /* ==================== 2. HERO / HOME SECTION ==================== */
+        .hero-section {
+            padding: 44px 16px 36px;
+            text-align: center;
+        }
+
+        .hero-logo-ring {
+            width: 154px;
+            height: 154px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(145deg, #fff0b3, #c8963e, #4a3310);
+            box-shadow: 0 0 42px rgba(212, 175, 55, 0.35);
+        }
+
+        .hero-logo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 35%, #2c1e0c 0%, #090807 85%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-logo-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-name {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 7vw, 3.8rem);
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        .hero-tagline {
+            font-size: clamp(0.92rem, 2.8vw, 1.15rem);
+            font-weight: 500;
+            color: #e4dccf;
+            letter-spacing: 0.03em;
+            margin-bottom: 14px;
+        }
+
+        .location-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-mid);
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .hero-cta-row a {
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-size: 0.88rem;
+        }
+
+        /* ==================== SECTION HEADERS ==================== */
+        .section-block {
+            padding: 36px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .section-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold-mid);
+            margin-bottom: 4px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .swipe-hint {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+
+        /* ==================== 3. OUR WORK (7 HORIZONTAL REELS) ==================== */
+        .horizontal-track {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 4px 16px 14px;
+            scroll-padding: 16px;
+        }
+
+        .reel-card {
+            flex: 0 0 245px;
+            aspect-ratio: 9 / 16;
+            border-radius: 22px;
+            background: linear-gradient(165deg, #211910 0%, #0d0b09 100%);
+            border: 1.5px solid var(--border-gold);
+            overflow: hidden;
+            position: relative;
+            scroll-snap-align: start;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+        }
+
+        @media (min-width: 640px) {
+            .reel-card {
+                flex: 0 0 270px;
+            }
+        }
+
+        .reel-poster-bg {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 35%, rgba(212, 175, 55, 0.16), transparent 70%);
+            z-index: 1;
+        }
+
+        .reel-card video {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: transparent;
+        }
+
+        .reel-overlay-top {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            z-index: 4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .reel-badge {
+            background: rgba(8, 8, 10, 0.72);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            letter-spacing: 0.04em;
+        }
+
+        .reel-overlay-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 4;
+            padding: 36px 12px 12px;
+            background: linear-gradient(to top, rgba(8, 8, 10, 0.92) 0%, rgba(8, 8, 10, 0.45) 60%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .reel-caption {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #fff;
+            pointer-events: none;
+        }
+
+        .reel-sub {
+            font-size: 0.68rem;
+            color: var(--gold-mid);
+            pointer-events: none;
+        }
+
+        .speaker-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(12, 10, 8, 0.88);
+            border: 1.5px solid var(--gold-mid);
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+            transition: all 0.2s ease;
+        }
+
+        .speaker-btn.active {
+            background: linear-gradient(135deg, #edd085, #c8963e);
+            color: #120d06;
+            box-shadow: 0 0 18px rgba(212, 175, 55, 0.65);
+        }
+
+        /* ==================== 4. SERVICES SECTION (HORIZONTAL CARDS) ==================== */
+        .service-card {
+            flex: 0 0 265px;
+            background: linear-gradient(160deg, #19140e 0%, #100d0a 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            padding: 20px;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .service-icon-box {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--border-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+
+        .service-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ==================== 5. PACKAGE & PRICING CALCULATOR (4-4-4 SLIDES) ==================== */
+        .calculator-wrapper {
+            max-width: 540px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #15110c 0%, #0e0b08 100%);
+            border: 1.5px solid var(--border-gold-strong);
+            border-radius: 26px;
+            padding: 18px 14px 22px;
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.75), 0 0 35px rgba(212, 175, 55, 0.1);
+        }
+
+        @media (min-width: 480px) {
+            .calculator-wrapper {
+                padding: 22px 20px 26px;
+            }
+        }
+
+        .calc-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .lang-toggle-btn {
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: #1b150e;
+            border: 1.5px solid var(--gold-mid);
+            color: var(--gold-light);
+            font-size: 0.82rem;
+            font-weight: 700;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+        }
+
+        .lang-toggle-btn:hover {
+            background: rgba(212, 175, 55, 0.18);
+        }
+
+        /* 3 Horizontal Slide Pages (Each containing 4 Category Cards in a 2x2 Grid) */
+        .cat-slider-wrap {
+            margin-bottom: 20px;
+        }
+
+        .cat-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .cat-slide-group {
+            flex: 0 0 100%;
+            width: 100%;
+            scroll-snap-align: start;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .cat-card {
+            background: #14100b;
+            border: 1px solid rgba(212, 175, 55, 0.22);
+            border-radius: 16px;
+            padding: 14px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 6px;
+            min-height: 84px;
+            transition: all 0.2s ease;
+        }
+
+        .cat-card:hover {
+            border-color: var(--gold-mid);
+        }
+
+        .cat-card.active {
+            background: linear-gradient(135deg, #edd085 0%, #c8963e 55%, #a77422 100%);
+            border-color: #fff0b3;
+            color: #140f07;
+            box-shadow: 0 6px 20px rgba(200, 150, 62, 0.32);
+        }
+
+        .cat-emoji {
+            font-size: 1.45rem;
+            line-height: 1;
+        }
+
+        .cat-name {
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .cat-slider-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 12px;
+            padding: 0 4px;
+        }
+
+        .cat-arrow-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #14100b;
+            border: 1px solid rgba(212, 175, 55, 0.38);
+            color: var(--gold-light);
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cat-arrow-btn:hover {
+            background: rgba(212, 175, 55, 0.18);
+            border-color: var(--gold-mid);
+        }
+
+        .cat-dots {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cat-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(212, 175, 55, 0.28);
+            transition: all 0.25s ease;
+        }
+
+        .cat-dot.active {
+            width: 24px;
+            background: linear-gradient(135deg, #edd085, #c8963e);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Active Category Config Panel */
+        .calc-panel {
+            border-top: 1px solid var(--border-gold);
+            padding-top: 18px;
+        }
+
+        .calc-active-heading {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-display);
+            font-size: 1.22rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            margin-bottom: 16px;
+        }
+
+        .calc-group {
+            margin-bottom: 18px;
+        }
+
+        .calc-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .option-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .option-row-btn {
+            width: 100%;
+            padding: 13px 15px;
+            border-radius: 14px;
+            background: #14100b;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--text-main);
+            font-size: 0.86rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            text-align: left;
+            transition: all 0.18s ease;
+        }
+
+        .option-row-btn:hover {
+            border-color: var(--gold-mid);
+        }
+
+        .option-row-btn.selected {
+            background: linear-gradient(135deg, #edd085 0%, #c8963e 55%, #a77422 100%);
+            border-color: #fff0b3;
+            color: #140f07;
+            font-weight: 700;
+            box-shadow: 0 4px 16px rgba(200, 150, 62, 0.26);
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .price-pill {
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: #14100b;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--text-main);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .price-pill.selected {
+            background: linear-gradient(135deg, #edd085 0%, #c8963e 55%, #a77422 100%);
+            border-color: #fff0b3;
+            color: #140f07;
+        }
+
+        .included-box {
+            border: 1px dashed rgba(212, 175, 55, 0.42);
+            border-radius: 16px;
+            padding: 12px 14px;
+            background: rgba(20, 16, 11, 0.65);
+        }
+
+        .included-item {
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--gold-light);
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+        }
+
+        .included-item:last-child {
+            border-bottom: none;
+            padding-bottom: 2px;
+        }
+
+        .included-item:first-child {
+            padding-top: 2px;
+        }
+
+        .sample-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .sample-pill-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: #14100b;
+            border: 1px solid rgba(212, 175, 55, 0.32);
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .sample-pill-link:hover {
+            border-color: var(--gold-mid);
+            background: rgba(212, 175, 55, 0.12);
+        }
+
+        .play-badge-mini {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #3b82f6;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+        }
+
+        .calc-total-footer {
+            border-top: 1px solid var(--border-gold);
+            padding-top: 16px;
+            margin-top: 18px;
+        }
+
+        .total-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .total-label {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .total-amount {
+            font-family: var(--font-display);
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .calc-book-btn {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 999px;
+            font-size: 0.96rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* ==================== 6. OWNER SECTION ==================== */
+        .owner-card {
+            max-width: 480px;
+            margin: 0 auto;
+            background: linear-gradient(165deg, #1a140d 0%, #0e0b08 100%);
+            border: 1.5px solid var(--border-gold-strong);
+            border-radius: 28px;
+            padding: 32px 20px;
+            text-align: center;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+        }
+
+        .owner-photo-frame {
+            width: 168px;
+            height: 168px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #fff0b3, #c8963e, #593d12);
+            box-shadow: 0 0 32px rgba(212, 175, 55, 0.3);
+        }
+
+        .owner-photo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #1c1610;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .owner-photo-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .owner-name {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 5vw, 2.3rem);
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            margin-bottom: 6px;
+        }
+
+        .owner-sub {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ==================== 7. CONTACT & SOCIALS ==================== */
+        .social-card {
+            flex: 0 0 260px;
+            background: linear-gradient(160deg, #19140e 0%, #100d0a 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            padding: 18px;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        .social-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: rgba(212, 175, 55, 0.14);
+            border: 1px solid var(--border-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--gold-light);
+            flex-shrink: 0;
+        }
+
+        .social-card-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .social-card-actions a {
+            flex: 1;
+            padding: 9px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            text-align: center;
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 28px 16px 18px;
+            border-top: 1px solid rgba(212, 175, 55, 0.16);
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        /* ==================== FIXED BOTTOM ACTION BAR ==================== */
+        .bottom-fixed-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 95;
+            background: rgba(8, 8, 10, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-top: 1px solid var(--border-gold);
+            padding: 10px 14px;
+        }
+
+        .bottom-bar-inner {
+            max-width: 540px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .bottom-bar-btn {
+            padding: 12px 16px;
+            border-radius: 999px;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== 1. STICKY HEADER WITH 3-LINE HAMBURGER MENU ==================== -->
+    <header class="top-header">
+        <div class="header-inner">
+            <a href="#home" class="brand-wrap">
+                <div class="brand-avatar">
+                    <img src="logo.jpg" alt="Shoot Anurag Logo" onerror="this.style.display='none'; document.getElementById('header-svg-fallback').style.display='block';">
+                    <svg id="header-svg-fallback" style="display:none; width:22px; height:22px;" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 17L5 8L9.5 12L12 6L14.5 12L19 8L21 17H3Z" fill="#e7be6a" stroke="#fff0b3" stroke-width="1.3" stroke-linejoin="round"/>
+                        <rect x="4" y="18.5" width="16" height="2" rx="1" fill="#c8963e"/>
+                    </svg>
+                </div>
+                <span class="brand-title gold-text">Shoot Anurag</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Desktop Navigation">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#work" class="nav-link">Our Work</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#packages" class="nav-link">Package &amp; Pricing</a>
+                <a href="#owner" class="nav-link">Owner</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- 3-Line Mobile Hamburger Button -->
+            <button type="button" class="hamburger-btn" id="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu Drawer -->
+        <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+            <a href="#home" class="mobile-drawer-link"><span>🏠 Home</span><span>➔</span></a>
+            <a href="#work" class="mobile-drawer-link"><span>🎬 Our Work (Reels)</span><span>➔</span></a>
+            <a href="#services" class="mobile-drawer-link"><span>✨ Our Services</span><span>➔</span></a>
+            <a href="#packages" class="mobile-drawer-link"><span>💰 Package &amp; Pricing</span><span>➔</span></a>
+            <a href="#owner" class="mobile-drawer-link"><span>👑 Owner (Anurag Sahu)</span><span>➔</span></a>
+            <a href="#contact" class="mobile-drawer-link"><span>📞 Contact &amp; Socials</span><span>➔</span></a>
+        </nav>
+    </header>
+
+    <!-- ==================== 2. HOME / HERO SECTION ==================== -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-logo-ring">
+                <div class="hero-logo-inner">
+                    <img src="logo.jpg" alt="Shoot Anurag Crown Logo" onerror="this.style.display='none'; document.getElementById('hero-logo-fallback').style.display='flex';">
+                    <div id="hero-logo-fallback" style="display:none; flex-direction:column; align-items:center; justify-content:center; padding:12px;">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="34" r="24" stroke="#e7be6a" stroke-width="2" stroke-dasharray="4 3"/>
+                            <path d="M18 22L22 12L28 17L32 10L36 17L42 12L46 22H18Z" fill="#e7be6a" stroke="#fff0b3" stroke-width="1.5" stroke-linejoin="round"/>
+                            <rect x="21" y="27" width="22" height="14" rx="3" fill="#1b150e" stroke="#e7be6a" stroke-width="2"/>
+                            <polygon points="30,31 30,37 36,34" fill="#fff0b3"/>
+                            <path d="M32 41V50M26 50H38" stroke="#c8963e" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                        <span style="font-family:var(--font-display); font-size:0.65rem; color:#fde68a; letter-spacing:0.12em; margin-top:4px;">SHOOT ANURAG</span>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="hero-name gold-text">Anurag</h1>
+            <p class="hero-tagline">Anurag Sahu - Reel Creator And Editor</p>
+
+            <div>
+                <span class="location-pill">
+                    <span>📍</span>
+                    <span>Umaria, Madhya Pradesh</span>
+                </span>
+            </div>
+
+            <div class="hero-cta-row">
+                <a href="#work" class="gold-btn">Watch Our Work</a>
+                <a href="#packages" class="outline-gold-btn">Package &amp; Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. OUR WORK (7 HORIZONTAL REELS WITH SPEAKER BUTTON) ==================== -->
+    <section id="work" class="section-block">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <p class="section-eyebrow">Cinematic Portfolio</p>
+                    <h2 class="section-title gold-text">Our Work</h2>
+                </div>
+                <span class="swipe-hint">Swipe Left / Right ➔</span>
+            </div>
+        </div>
+
+        <div class="horizontal-track no-scrollbar" id="reels-track"></div>
+    </section>
+
+    <!-- ==================== 4. SERVICES SECTION (HORIZONTAL SWIPE CARDS) ==================== -->
+    <section id="services" class="section-block">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <p class="section-eyebrow">What We Create</p>
+                    <h2 class="section-title gold-text">Our Services</h2>
+                </div>
+                <span class="swipe-hint">Swipe Left / Right ➔</span>
+            </div>
+        </div>
+
+        <div class="horizontal-track no-scrollbar">
+            <div class="service-card">
+                <div class="service-icon-box">🎬</div>
+                <h3>Reel Shoot &amp; Editing</h3>
+                <p>Trending transitions, beat-synced cuts, color grading, and high-retention Instagram Reels shot on gimbal &amp; pro gear.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-box">💍</div>
+                <h3>Wedding &amp; Event Videography</h3>
+                <p>Complete coverage of Haldi, Mehndi, Tilak, Varmala, and grand wedding films with emotional storytelling.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-box">🚁</div>
+                <h3>Photography &amp; Drone Shots</h3>
+                <p>Candid couple portraits, traditional photography, and breathtaking 4K aerial drone cinematography.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-box">🎨</div>
+                <h3>3D Cartoon Wedding Invitations</h3>
+                <p>Custom animated 3D caricature wedding invitation videos with personalized outfits, music, and story.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon-box">✨</div>
+                <h3>Wedding Entry &amp; Decoration</h3>
+                <p>Royal bride &amp; groom entry concepts, cold pyro effects, fog arrangements, and custom event stage decor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. PACKAGE & PRICING CALCULATOR (4-4-4 SLIDES) ==================== -->
+    <section id="packages" class="section-block">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <p class="section-eyebrow" id="pkg-eyebrow">Instant Estimator</p>
+                    <h2 class="section-title gold-text" id="pkg-heading">Package &amp; Pricing</h2>
+                </div>
+                <span class="swipe-hint">Swipe 3 Groups ➔</span>
+            </div>
+
+            <div class="calculator-wrapper">
+                <!-- Top-Right Language Switch Pill -->
+                <div class="calc-top-bar">
+                    <span class="calc-label" style="margin-bottom:0;" id="select-cat-label">SELECT CATEGORY</span>
+                    <button type="button" class="lang-toggle-btn" id="lang-toggle">हिंदी</button>
+                </div>
+
+                <!-- 12 Categories split into 3 Horizontal Swipe Slide Pages (4 cards per slide) -->
+                <div class="cat-slider-wrap">
+                    <div class="cat-carousel no-scrollbar" id="category-grid"></div>
+                    <div class="cat-slider-controls">
+                        <button type="button" class="cat-arrow-btn" id="cat-prev-btn" aria-label="Previous Slide">◀</button>
+                        <div class="cat-dots" id="cat-dots">
+                            <button type="button" class="cat-dot active" data-slide="0" aria-label="Group 1"></button>
+                            <button type="button" class="cat-dot" data-slide="1" aria-label="Group 2"></button>
+                            <button type="button" class="cat-dot" data-slide="2" aria-label="Group 3"></button>
+                        </div>
+                        <button type="button" class="cat-arrow-btn" id="cat-next-btn" aria-label="Next Slide">▶</button>
+                    </div>
+                </div>
+
+                <!-- Dynamic Options Area -->
+                <div class="calc-panel" id="calculator-panel"></div>
+
+                <!-- Live Total + WhatsApp Booking -->
+                <div class="calc-total-footer">
+                    <div class="total-row">
+                        <span class="total-label" id="est-total-label">Estimated total</span>
+                        <span class="total-amount gold-text" id="est-total-value">₹1,500</span>
+                    </div>
+                    <button type="button" class="gold-btn calc-book-btn" id="calc-whatsapp-btn">
+                        <span>💬</span>
+                        <span id="calc-book-text">Book on WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. OWNER SECTION ==================== -->
+    <section id="owner" class="section-block">
+        <div class="container">
+            <div class="section-header" style="justify-content:center; text-align:center;">
+                <div>
+                    <p class="section-eyebrow">Behind The Lens</p>
+                    <h2 class="section-title gold-text">Owner</h2>
+                </div>
+            </div>
+
+            <div class="owner-card">
+                <div class="owner-photo-frame">
+                    <div class="owner-photo-inner">
+                        <img src="anurag.jpg" alt="Anurag Sahu" onerror="this.style.display='none'; document.getElementById('owner-avatar-fallback').style.display='flex';">
+                        <div id="owner-avatar-fallback" style="display:none; flex-direction:column; align-items:center; justify-content:center; color:#e7be6a;">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#e7be6a" stroke-width="1.6">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                            </svg>
+                            <span style="font-size:0.68rem; margin-top:4px; color:#a89f91;">anurag.jpg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="owner-name gold-text">Anurag Sahu</h3>
+                <p class="owner-sub">Every Reels shoot and edited by me</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. CONTACT & SOCIALS SECTION ==================== -->
+    <section id="contact" class="section-block">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <p class="section-eyebrow">Connect &amp; Book</p>
+                    <h2 class="section-title gold-text">Contact &amp; Socials</h2>
+                </div>
+                <span class="swipe-hint">Swipe Left / Right ➔</span>
+            </div>
+        </div>
+
+        <div class="horizontal-track no-scrollbar">
+            <div class="social-card">
+                <div class="social-header">
+                    <div class="social-icon">📸</div>
+                    <div>
+                        <h3 style="font-size:0.95rem; font-weight:700; color:var(--gold-light);">@shoot_anurag</h3>
+                        <p style="font-size:0.75rem; color:var(--text-muted);">Official Shoot &amp; Reels Page</p>
+                    </div>
+                </div>
+                <div class="social-card-actions">
+                    <a href="https://www.instagram.com/shoot_anurag" target="_blank" rel="noopener noreferrer" class="gold-btn">Open Instagram</a>
+                </div>
+            </div>
+
+            <div class="social-card">
+                <div class="social-header">
+                    <div class="social-icon">🎥</div>
+                    <div>
+                        <h3 style="font-size:0.95rem; font-weight:700; color:var(--gold-light);">@kaudiya_ka_vloger</h3>
+                        <p style="font-size:0.75rem; color:var(--text-muted);">Vlogs &amp; Local Stories</p>
+                    </div>
+                </div>
+                <div class="social-card-actions">
+                    <a href="https://www.instagram.com/kaudiya_ka_vloger?mdxt=MWdjZTRqM2ZrcnJ6Mw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="gold-btn">Open Instagram</a>
+                </div>
+            </div>
+
+            <div class="social-card">
+                <div class="social-header">
+                    <div class="social-icon">📞</div>
+                    <div>
+                        <h3 style="font-size:0.95rem; font-weight:700; color:var(--gold-light);">9302762220</h3>
+                        <p style="font-size:0.75rem; color:var(--text-muted);">Primary Booking &amp; WhatsApp</p>
+                    </div>
+                </div>
+                <div class="social-card-actions">
+                    <a href="https://wa.me/919302762220?text=Hi%20Anurag%2C%20I%20want%20to%20book%20a%20shoot!" target="_blank" rel="noopener noreferrer" class="gold-btn">WhatsApp</a>
+                    <a href="tel:+919302762220" class="outline-gold-btn">Call</a>
+                </div>
+            </div>
+
+            <div class="social-card">
+                <div class="social-header">
+                    <div class="social-icon">📱</div>
+                    <div>
+                        <h3 style="font-size:0.95rem; font-weight:700; color:var(--gold-light);">7566569843</h3>
+                        <p style="font-size:0.75rem; color:var(--text-muted);">Alternate Contact Number</p>
+                    </div>
+                </div>
+                <div class="social-card-actions">
+                    <a href="https://wa.me/917566569843?text=Hi%20Anurag%2C%20I%20want%20to%20book%20a%20shoot!" target="_blank" rel="noopener noreferrer" class="gold-btn">WhatsApp</a>
+                    <a href="tel:+917566569843" class="outline-gold-btn">Call</a>
+                </div>
+            </div>
+
+            <div class="social-card">
+                <div class="social-header">
+                    <div class="social-icon">📍</div>
+                    <div>
+                        <h3 style="font-size:0.95rem; font-weight:700; color:var(--gold-light);">Umaria, M.P.</h3>
+                        <p style="font-size:0.75rem; color:var(--text-muted);">Available across Madhya Pradesh</p>
+                    </div>
+                </div>
+                <div class="social-card-actions">
+                    <a href="#packages" class="outline-gold-btn">Check Packages</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+        <p>© 2026 <strong style="color:var(--gold-mid);">Shoot Anurag</strong> • Anurag Sahu • Umaria, Madhya Pradesh</p>
+    </footer>
+
+    <!-- ==================== FIXED BOTTOM BAR ==================== -->
+    <div class="bottom-fixed-bar">
+        <div class="bottom-bar-inner">
+            <a href="https://wa.me/919302762220?text=Hi%20Anurag%2C%20I%20visited%20your%20portfolio%20and%20want%20to%20book%20a%20shoot!" target="_blank" rel="noopener noreferrer" class="gold-btn bottom-bar-btn" id="sticky-wa-btn">
+                WhatsApp
+            </a>
+            <a href="tel:+919302762220" class="outline-gold-btn bottom-bar-btn" id="sticky-call-btn">
+                Call
+            </a>
+        </div>
+    </div>
+
+    <!-- ==================== CLEAN VANILLA JAVASCRIPT ==================== -->
+    <script>
+        (function () {
+            /* -------------------- 0. 3-LINE HAMBURGER DRAWER TOGGLE -------------------- */
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileDrawer = document.getElementById('mobile-drawer');
+
+            hamburgerBtn.addEventListener('click', () => {
+                const isOpen = mobileDrawer.classList.toggle('open');
+                hamburgerBtn.classList.toggle('open', isOpen);
+                hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            mobileDrawer.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    mobileDrawer.classList.remove('open');
+                    hamburgerBtn.classList.remove('open');
+                    hamburgerBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            /* -------------------- 1. OUR WORK REELS DATA & SPEAKER TOGGLE -------------------- */
+            const reelsData = [
+                { id: 1, file: 'video_1.mp4', title: 'Mehndi Celebration', tag: 'Wedding Reel' },
+                { id: 2, file: 'video_2.mp4', title: 'Royal Varmala', tag: 'Cinematic Edit' },
+                { id: 3, file: 'video_3.mp4', title: 'Tilakotsav Highlights', tag: 'Traditional' },
+                { id: 4, file: 'video_4.mp4', title: 'Haldi Ceremony', tag: 'Trending Edit' },
+                { id: 5, file: 'video_5.mp4', title: 'Car Delivery Reel', tag: 'Commercial' },
+                { id: 6, file: 'video_6.mp4', title: 'Cultural & Temple Vlog', tag: 'Mini Vlog' },
+                { id: 7, file: 'video_7.mp4', title: 'Laganotsav Moments', tag: 'Event Shoot' }
+            ];
+
+            const reelsTrack = document.getElementById('reels-track');
+
+            const speakerOffIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
+            const speakerOnIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>';
+
+            reelsData.forEach((reel) => {
+                const card = document.createElement('div');
+                card.className = 'reel-card';
+                card.innerHTML = `
+                    <div class="reel-poster-bg">
+                        <span style="font-size:2rem; margin-bottom:8px;">🎬</span>
+                        <span style="font-family:var(--font-display); font-size:0.88rem; color:var(--gold-light); font-weight:700;">${reel.title}</span>
+                        <span style="font-size:0.7rem; color:var(--text-muted); margin-top:4px;">${reel.file}</span>
+                    </div>
+                    <video src="${reel.file}" autoplay loop muted playsinline preload="metadata" onerror="this.style.display='none'"></video>
+                    <div class="reel-overlay-top">
+                        <span class="reel-badge">${reel.tag}</span>
+                    </div>
+                    <div class="reel-overlay-bottom">
+                        <div>
+                            <div class="reel-caption">${reel.title}</div>
+                            <div class="reel-sub">@shoot_anurag</div>
+                        </div>
+                        <button type="button" class="speaker-btn" aria-label="Toggle Audio for ${reel.title}" title="Sound On/Off">
+                            ${speakerOffIcon}
+                        </button>
+                    </div>
+                `;
+                reelsTrack.appendChild(card);
+            });
+
+            const allVideos = Array.from(reelsTrack.querySelectorAll('video'));
+            const allSpeakerBtns = Array.from(reelsTrack.querySelectorAll('.speaker-btn'));
+
+            allSpeakerBtns.forEach((btn, index) => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const targetVideo = allVideos[index];
+                    const willUnmute = targetVideo.muted;
+
+                    allVideos.forEach((vid, idx) => {
+                        vid.muted = true;
+                        allSpeakerBtns[idx].classList.remove('active');
+                        allSpeakerBtns[idx].innerHTML = speakerOffIcon;
+                    });
+
+                    if (willUnmute) {
+                        targetVideo.muted = false;
+                        targetVideo.play().catch(() => {});
+                        btn.classList.add('active');
+                        btn.innerHTML = speakerOnIcon;
+                    }
+                });
+            });
+
+            /* -------------------- 2. PACKAGE & PRICING CALCULATOR (4-4-4 SLIDES) -------------------- */
+            const i18n = {
+                en: {
+                    toggleBtn: 'हिंदी',
+                    eyebrow: 'Instant Estimator',
+                    heading: 'Package & Pricing',
+                    selectCat: 'SELECT CATEGORY',
+                    pkgLabel: 'PACKAGE',
+                    shotOnLabel: 'SHOT ON',
+                    extrasLabel: 'EXTRAS',
+                    includedLabel: "WHAT'S INCLUDED",
+                    samplesLabel: 'SEE SAMPLE WORK',
+                    estTotal: 'Estimated total',
+                    bookWhatsapp: 'Book on WhatsApp',
+                    stickyWa: 'WhatsApp',
+                    stickyCall: 'Call',
+                    phoneText: 'Phone',
+                    includedText: 'Included',
+                    cameraText: 'Camera',
+                    droneText: 'Drone shots',
+                    preWedPkgLabel: 'PRE-WEDDING PACKAGE',
+                    albumOptLabel: 'ALBUM (OPTIONAL)',
+                    album20Text: '20-sheet photo album',
+                    wedModeLabel: 'WEDDING: PACKAGE OR CUSTOM',
+                    readyPkg: 'Ready package',
+                    buildOwn: 'Build your own',
+                    wedPkgLabel: 'WEDDING PACKAGE',
+                    reelsLabel: 'REELS',
+                    albumLabel: 'ALBUM',
+                    customPrompt: 'SELECT EVENTS / DAYS TO INCLUDE'
+                },
+                hi: {
+                    toggleBtn: 'English',
+                    eyebrow: 'तुरंत रेट कैलकुलेटर',
+                    heading: 'पैकेज और प्राइसिंग',
+                    selectCat: 'कैटेगरी चुनें',
+                    pkgLabel: 'पैकेज चुनें',
+                    shotOnLabel: 'शूट डिवाइस (SHOT ON)',
+                    extrasLabel: 'अतिरिक्त सेवाएं (EXTRAS)',
+                    includedLabel: 'पैकेज में क्या शामिल है',
+                    samplesLabel: 'सैंपल वीडियो देखें',
+                    estTotal: 'अनुमानित कुल राशि',
+                    bookWhatsapp: 'WhatsApp पर बुक करें',
+                    stickyWa: 'व्हाट्सएप',
+                    stickyCall: 'कॉल करें',
+                    phoneText: 'फ़ोन (Phone)',
+                    includedText: 'शामिल (Included)',
+                    cameraText: 'कैमरा (Camera)',
+                    droneText: 'ड्रोन शॉट्स',
+                    preWedPkgLabel: 'प्री-वेडिंग पैकेज',
+                    albumOptLabel: 'फोटो एल्बम (वैकल्पिक)',
+                    album20Text: '20-शीट फोटो एल्बम',
+                    wedModeLabel: 'वेडिंग: रेडी पैकेज या खुद बनाएं',
+                    readyPkg: 'रेडी पैकेज',
+                    buildOwn: 'खुद का पैकेज बनाएं',
+                    wedPkgLabel: 'वेडिंग पैकेज',
+                    reelsLabel: 'अतिरिक्त रील्स',
+                    albumLabel: 'फोटो एल्बम',
+                    customPrompt: 'अपने कार्यक्रम चुनें'
+                }
+            };
+
+            const categories = [
+                /* SLIDE 1 (4 Items) */
+                {
+                    id: 'car',
+                    emoji: '🚗',
+                    name: { en: 'Car Delivery', hi: 'कार डिलीवरी' },
+                    mode: 'delivery',
+                    tiers: [
+                        { name: { en: 'Normal', hi: 'नॉर्मल' }, range: '₹1,500', prices: [1500] },
+                        { name: { en: 'Professional', hi: 'प्रोफेशनल' }, range: '₹2,500', prices: [2500] }
+                    ],
+                    samples: [{ en: 'Car delivery reel', hi: 'कार डिलीवरी रील' }]
+                },
+                {
+                    id: 'bike',
+                    emoji: '🏍️',
+                    name: { en: 'Bike Delivery', hi: 'बाइक डिलीवरी' },
+                    mode: 'delivery',
+                    tiers: [
+                        { name: { en: 'Normal', hi: 'नॉर्मल' }, range: '₹1,500', prices: [1500] },
+                        { name: { en: 'Professional', hi: 'प्रोफेशनल' }, range: '₹2,500', prices: [2500] }
+                    ],
+                    samples: [
+                        { en: 'Normal bike delivery', hi: 'नॉर्मल बाइक डिलीवरी' },
+                        { en: 'Professional bike delivery', hi: 'प्रोफेशनल बाइक डिलीवरी' }
+                    ]
+                },
+                {
+                    id: 'birthday',
+                    emoji: '🎂',
+                    name: { en: 'Birthday & Pre-Birthday', hi: 'बर्थडे और प्री-बर्थडे' },
+                    mode: 'delivery',
+                    tiers: [
+                        { name: { en: 'Normal', hi: 'नॉर्मल' }, range: '₹2,500 – ₹4,500', prices: [2500, 4500] },
+                        { name: { en: 'Professional', hi: 'प्रोफेशनल' }, range: '₹6,500 – ₹12,000', prices: [6500, 12000] }
+                    ],
+                    samples: [{ en: 'Birthday celebration reel', hi: 'बर्थडे सेलिब्रेशन रील' }]
+                },
+                {
+                    id: 'anniversary',
+                    emoji: '💑',
+                    name: { en: 'Anniversary & Couple', hi: 'एनिवर्सरी और कपल' },
+                    mode: 'delivery',
+                    tiers: [
+                        { name: { en: 'Normal', hi: 'नॉर्मल' }, range: '₹2,500 – ₹4,500', prices: [2500, 4500] },
+                        { name: { en: 'Professional', hi: 'प्रोफेशनल' }, range: '₹6,500 – ₹12,000', prices: [6500, 12000] }
+                    ],
+                    samples: [{ en: 'Couple cinematic reel', hi: 'कपल सिनेमैटिक रील' }]
+                },
+
+                /* SLIDE 2 (4 Items) */
+                {
+                    id: 'music',
+                    emoji: '🎵',
+                    name: { en: 'Music Video', hi: 'म्यूजिक वीडियो' },
+                    mode: 'slabs',
+                    range: '₹5,000 – ₹25,000',
+                    prices: [5000, 10000, 18000, 25000],
+                    samples: [{ en: 'Music video shoot', hi: 'म्यूजिक वीडियो शूट' }]
+                },
+                {
+                    id: 'prewedding',
+                    emoji: '💕',
+                    name: { en: 'Pre-Wedding', hi: 'प्री-वेडिंग' },
+                    mode: 'prewedding',
+                    tiers: [
+                        {
+                            name: { en: 'Traditional', hi: 'ट्रेडिशनल' },
+                            range: '₹15,000 – ₹25,000',
+                            prices: [15000, 25000],
+                            included: {
+                                en: ['1 LOCATION • 1 DAY', '1 LONG VIDEO', '1 SHORT REEL', 'TRADITIONAL PHOTOGRAPHER • GROOM & COUPLE PHOTOGRAPHY'],
+                                hi: ['1 लोकेशन • 1 दिन', '1 लॉन्ग वीडियो', '1 शॉर्ट रील', 'ट्रेडिशनल फोटोग्राफर • दूल्हा और कपल फोटोग्राफी']
+                            }
+                        },
+                        {
+                            name: { en: 'Professional', hi: 'प्रोफेशनल' },
+                            range: '₹45,000 – ₹80,000',
+                            prices: [45000, 80000],
+                            included: {
+                                en: ['2 LOCATIONS • 2 DAYS', 'CINEMATIC 4K FILM + TEASER', '3 INSTAGRAM REELS', 'DRONE SHOTS + CANDID PHOTOGRAPHY'],
+                                hi: ['2 लोकेशन • 2 दिन', 'सिनेमैटिक 4K फिल्म + टीज़र', '3 इंस्टाग्राम रील्स', 'ड्रोन शॉट्स + कैंडिड फोटोग्राफी']
+                            }
+                        }
+                    ],
+                    samples: [
+                        { en: 'Traditional pre-wedding', hi: 'ट्रेडिशनल प्री-वेडिंग' },
+                        { en: 'Cinematic pre-wedding', hi: 'सिनेमैटिक प्री-वेडिंग' }
+                    ]
+                },
+                {
+                    id: 'wedding',
+                    emoji: '💍',
+                    name: { en: 'Wedding', hi: 'वेडिंग (शादी)' },
+                    mode: 'wedding',
+                    samples: [
+                        { en: 'Traditional wedding', hi: 'ट्रेडिशनल वेडिंग' },
+                        { en: 'Cinematic wedding', hi: 'सिनेमैटिक वेडिंग' },
+                        { en: 'Wedding film', hi: 'वेडिंग फिल्म' },
+                        { en: 'Drone shots', hi: 'ड्रोन शॉट्स' }
+                    ]
+                },
+                {
+                    id: 'wedding_pre',
+                    emoji: '💍',
+                    name: { en: 'Wedding + Pre-Wedding', hi: 'वेडिंग + प्री-वेडिंग' },
+                    mode: 'wedding_pre',
+                    samples: [
+                        { en: 'Cinematic pre-wedding', hi: 'सिनेमैटिक प्री-वेडिंग' },
+                        { en: 'Cinematic wedding', hi: 'सिनेमैटिक वेडिंग' },
+                        { en: 'Wedding film', hi: 'वेडिंग फिल्म' }
+                    ]
+                },
+
+                /* SLIDE 3 (4 Items) */
+                {
+                    id: 'resort',
+                    emoji: '🏨',
+                    name: { en: 'Resort • Hotel • Restaurant', hi: 'रिसॉर्ट • होटल • रेस्टोरेंट' },
+                    mode: 'included_slabs',
+                    range: '₹15,000 – ₹50,000',
+                    prices: [15000, 25000, 50000],
+                    included: {
+                        en: ['LONG VIDEO + REELS', 'CONTENT PLANNED AS PER YOUR WISH. WE CONFIRM THE DETAILS ON A CALL FIRST.'],
+                        hi: ['लॉन्ग वीडियो + रील्स', 'आपकी पसंद के अनुसार कंटेंट प्लान किया जाता है। हम पहले कॉल पर पूरी जानकारी कन्फर्म करते हैं।']
+                    },
+                    samples: [
+                        { en: 'Resort video', hi: 'रिसॉर्ट वीडियो' },
+                        { en: 'Hotel & restaurant video', hi: 'होटल और रेस्टोरेंट वीडियो' }
+                    ]
+                },
+                {
+                    id: 'drone',
+                    emoji: '🚁',
+                    name: { en: 'Drone Shots', hi: 'ड्रोन शॉट्स' },
+                    mode: 'included_slabs',
+                    boxTitle: { en: 'Drone shots only', hi: 'केवल ड्रोन शॉट्स' },
+                    range: '₹4,500 – ₹7,000',
+                    prices: [4500, 7000],
+                    included: {
+                        en: ['1 REEL', '1 LONG VIDEO'],
+                        hi: ['1 रील', '1 लॉन्ग वीडियो']
+                    },
+                    samples: [
+                        { en: 'Drone shots', hi: 'ड्रोन शॉट्स' },
+                        { en: 'Wedding drone', hi: 'वेडिंग ड्रोन' }
+                    ]
+                },
+                {
+                    id: 'invite3d',
+                    emoji: '🎬',
+                    name: { en: '3D Cartoon Wedding Invite', hi: '3D कार्टून वेडिंग कार्ड' },
+                    mode: 'simple_tiers',
+                    tiers: [
+                        { name: { en: 'Normal', hi: 'नॉर्मल 3D इनवाइट' }, range: '₹500', prices: [500] },
+                        { name: { en: 'Professional Custom 3D', hi: 'प्रोफेशनल कस्टम 3D' }, range: '₹3,000', prices: [3000] }
+                    ],
+                    samples: [{ en: '3D Wedding Invitation Demo', hi: '3D वेडिंग इनविटेशन डेमो' }]
+                },
+                {
+                    id: 'entry_decor',
+                    emoji: '✨',
+                    name: { en: 'Wedding Entry & Decor', hi: 'वेडिंग एंट्री और डेकोरेशन' },
+                    mode: 'simple_tiers',
+                    tiers: [
+                        { name: { en: 'Standard Entry', hi: 'स्टैंडर्ड एंट्री पैकेज' }, range: '₹10,000', prices: [10000] },
+                        { name: { en: 'Grand Royal Entry & Decor', hi: 'ग्रैंड रॉयल एंट्री और डेकोर' }, range: '₹80,000', prices: [80000] }
+                    ],
+                    samples: [{ en: 'Royal Entry Highlights', hi: 'रॉयल एंट्री हाइलाइट्स' }]
+                }
+            ];
+
+            const weddingReadyTiers = [
+                { name: { en: 'Traditional', hi: 'ट्रेडिशनल' }, range: '₹25,000 – ₹50,000', prices: [25000, 35000, 50000] },
+                { name: { en: 'Cinematic', hi: 'सिनेमैटिक' }, range: '₹55,000 – ₹1,05,000', prices: [55000, 80000, 105000] },
+                { name: { en: 'Wedding Films', hi: 'वेडिंग फिल्म्स' }, range: '₹1,00,000 – ₹2,00,000', prices: [100000, 150000, 200000] }
+            ];
+
+            const weddingCustomEvents = [
+                { id: 'haldi', name: { en: 'Haldi & Mehndi Shoot', hi: 'हल्दी और मेहंदी शूट' }, price: 10000 },
+                { id: 'tilak', name: { en: 'Tilak / Engagement Shoot', hi: 'तिलक / सगाई शूट' }, price: 12000 },
+                { id: 'shaadi', name: { en: 'Main Wedding Day (4K)', hi: 'मुख्य शादी का दिन (4K)' }, price: 25000 }
+            ];
+
+            const reelsOptions = [
+                { label: { en: 'None', hi: 'कोई नहीं' }, price: 0 },
+                { label: { en: '1 reel', hi: '1 रील' }, price: 800 },
+                { label: { en: '2 reels', hi: '2 रील्स' }, price: 1500 },
+                { label: { en: '3 reels', hi: '3 रील्स' }, price: 2000 },
+                { label: { en: '4 reels', hi: '4 रील्स' }, price: 2500 },
+                { label: { en: '5 reels', hi: '5 रील्स' }, price: 3000 }
+            ];
+
+            const albumOptions = [
+                { label: { en: 'None', hi: 'कोई नहीं' }, range: '', price: 0 },
+                { label: { en: 'Normal album', hi: 'नॉर्मल एल्बम' }, range: '₹2,000 – ₹5,000', price: 2000 },
+                { label: { en: 'Professional album • matte finish', hi: 'प्रोफेशनल एल्बम • मैट फिनिश' }, range: '₹3,000 – ₹6,000', price: 3000 }
+            ];
+
+            const state = {
+                lang: 'en',
+                catId: 'car',
+                tierIdx: 0,
+                priceIdx: 0,
+                shotOn: 'phone',
+                drone2k: false,
+                preAlbum: false,
+                wedMode: 'ready',
+                wedTierIdx: 0,
+                wedPriceIdx: 0,
+                wedCustomIds: ['shaadi'],
+                wedDrone5k: false,
+                wedReelsIdx: 0,
+                wedAlbumIdx: 0
+            };
+
+            const formatRupees = (val) => '₹' + val.toLocaleString('en-IN');
+
+            const catGridEl = document.getElementById('category-grid');
+            const catDotsEl = document.getElementById('cat-dots');
+            const calcPanelEl = document.getElementById('calculator-panel');
+            const totalValueEl = document.getElementById('est-total-value');
+            const langToggleBtn = document.getElementById('lang-toggle');
+            let currentSlide = 0;
+
+            function resetOptions() {
+                state.tierIdx = 0;
+                state.priceIdx = 0;
+                state.shotOn = 'phone';
+                state.drone2k = false;
+                state.preAlbum = false;
+                state.wedMode = 'ready';
+                state.wedTierIdx = 0;
+                state.wedPriceIdx = 0;
+                state.wedCustomIds = ['shaadi'];
+                state.wedDrone5k = false;
+                state.wedReelsIdx = 0;
+                state.wedAlbumIdx = 0;
+            }
+
+            function updateCategoryDots(activeIdx) {
+                catDotsEl.querySelectorAll('.cat-dot').forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === activeIdx);
+                });
+            }
+
+            function goToCategorySlide(slideIdx) {
+                const totalSlides = Math.ceil(categories.length / 4);
+                currentSlide = Math.max(0, Math.min(slideIdx, totalSlides - 1));
+                const slideWidth = catGridEl.clientWidth + 12;
+                catGridEl.scrollTo({ left: currentSlide * slideWidth, behavior: 'smooth' });
+                updateCategoryDots(currentSlide);
+            }
+
+            function renderCategoryGrid() {
+                catGridEl.innerHTML = '';
+                for (let i = 0; i < categories.length; i += 4) {
+                    const groupEl = document.createElement('div');
+                    groupEl.className = 'cat-slide-group';
+                    const chunk = categories.slice(i, i + 4);
+
+                    chunk.forEach((cat) => {
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'cat-card' + (cat.id === state.catId ? ' active' : '');
+                        btn.innerHTML = `
+                            <span class="cat-emoji">${cat.emoji}</span>
+                            <span class="cat-name">${cat.name[state.lang]}</span>
+                        `;
+                        btn.addEventListener('click', () => {
+                            if (state.catId !== cat.id) {
+                                state.catId = cat.id;
+                                resetOptions();
+                                renderCalculator();
+                            }
+                        });
+                        groupEl.appendChild(btn);
+                    });
+
+                    catGridEl.appendChild(groupEl);
+                }
+            }
+
+            catGridEl.addEventListener('scroll', () => {
+                const slideWidth = catGridEl.clientWidth + 12;
+                if (slideWidth > 0) {
+                    const idx = Math.round(catGridEl.scrollLeft / slideWidth);
+                    if (idx !== currentSlide) {
+                        currentSlide = idx;
+                        updateCategoryDots(currentSlide);
+                    }
+                }
+            });
+
+            document.getElementById('cat-prev-btn').addEventListener('click', () => {
+                goToCategorySlide(currentSlide - 1);
+            });
+
+            document.getElementById('cat-next-btn').addEventListener('click', () => {
+                goToCategorySlide(currentSlide + 1);
+            });
+
+            catDotsEl.querySelectorAll('.cat-dot').forEach((dot) => {
+                dot.addEventListener('click', () => {
+                    goToCategorySlide(Number(dot.dataset.slide));
+                });
+            });
+
+            function buildWeddingSectionHTML(t) {
+                let html = `
+                    <div class="calc-group">
+                        <span class="calc-label">${t.wedModeLabel}</span>
+                        <div class="option-stack">
+                            <button type="button" class="option-row-btn ${state.wedMode === 'ready' ? 'selected' : ''}" data-act="wed-mode" data-val="ready">
+                                <span>${t.readyPkg}</span>
+                            </button>
+                            <button type="button" class="option-row-btn ${state.wedMode === 'custom' ? 'selected' : ''}" data-act="wed-mode" data-val="custom">
+                                <span>${t.buildOwn}</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                if (state.wedMode === 'ready') {
+                    const activeWedTier = weddingReadyTiers[state.wedTierIdx] || weddingReadyTiers[0];
+                    html += `
+                        <div class="calc-group">
+                            <span class="calc-label">${t.wedPkgLabel}</span>
+                            <div class="option-stack">
+                                ${weddingReadyTiers.map((wt, idx) => `
+                                    <button type="button" class="option-row-btn ${state.wedTierIdx === idx ? 'selected' : ''}" data-act="wed-tier" data-idx="${idx}">
+                                        <span>${wt.name[state.lang]}</span>
+                                        <span>${wt.range}</span>
+                                    </button>
+                                `).join('')}
+                            </div>
+                            <div class="pill-row">
+                                ${activeWedTier.prices.map((p, pIdx) => `
+                                    <button type="button" class="price-pill ${state.wedPriceIdx === pIdx ? 'selected' : ''}" data-act="wed-price" data-idx="${pIdx}">
+                                        ${formatRupees(p)}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    html += `
+                        <div class="calc-group">
+                            <span class="calc-label">${t.customPrompt}</span>
+                            <div class="option-stack">
+                                ${weddingCustomEvents.map((ev) => {
+                                    const isSel = state.wedCustomIds.includes(ev.id);
+                                    return `
+                                        <button type="button" class="option-row-btn ${isSel ? 'selected' : ''}" data-act="wed-custom" data-id="${ev.id}">
+                                            <span>${ev.name[state.lang]}</span>
+                                            <span>+ ${formatRupees(ev.price)}</span>
+                                        </button>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                html += `
+                    <div class="calc-group">
+                        <span class="calc-label">${t.extrasLabel}</span>
+                        <button type="button" class="option-row-btn ${state.wedDrone5k ? 'selected' : ''}" data-act="wed-drone">
+                            <span>${t.droneText}</span>
+                            <span>+ ₹5,000</span>
+                        </button>
+                    </div>
+
+                    <div class="calc-group">
+                        <span class="calc-label">${t.reelsLabel}</span>
+                        <div class="option-stack">
+                            ${reelsOptions.map((r, idx) => `
+                                <button type="button" class="option-row-btn ${state.wedReelsIdx === idx ? 'selected' : ''}" data-act="wed-reels" data-idx="${idx}">
+                                    <span>${r.label[state.lang]}</span>
+                                    <span>${r.price > 0 ? '+ ' + formatRupees(r.price) : ''}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="calc-group">
+                        <span class="calc-label">${t.albumLabel}</span>
+                        <div class="option-stack">
+                            ${albumOptions.map((a, idx) => `
+                                <button type="button" class="option-row-btn ${state.wedAlbumIdx === idx ? 'selected' : ''}" data-act="wed-album" data-idx="${idx}">
+                                    <span>${a.label[state.lang]}</span>
+                                    <span>${a.range}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                return html;
+            }
+
+            function renderPanel() {
+                const t = i18n[state.lang];
+                const cat = categories.find(c => c.id === state.catId) || categories[0];
+
+                let html = `
+                    <div class="calc-active-heading">
+                        <span>${cat.emoji}</span>
+                        <span class="gold-text">${cat.name[state.lang]}</span>
+                    </div>
+                `;
+
+                if (cat.mode === 'delivery') {
+                    const activeTier = cat.tiers[state.tierIdx] || cat.tiers[0];
+                    html += `
+                        <div class="calc-group">
+                            <span class="calc-label">${t.pkgLabel}</span>
+                            <div class="option-stack">
+                                ${cat.tiers.map((tier, idx) => `
+                                    <button type="button" class="option-row-btn ${state.tierIdx === idx ? 'selected' : ''}" data-act="tier" data-idx="${idx}">
+                                        <span>${tier.name[state.lang]}</span>
+                                        <span>${tier.range}</span>
+                                    </button>
+                                `).join('')}
+                            </div>
+                            ${activeTier.prices.length > 1 ? `
+                                <div class="pill-row">
+                                    ${activeTier.prices.map((p, pIdx) => `
+                                        <button type="button" class="price-pill ${state.priceIdx === pIdx ? 'selected' : ''}" data-act="price" data-idx="${pIdx}">
+                                            ${formatRupees(p)}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+
+                        <div class="calc-group">
+                            <span class="calc-label">${t.shotOnLabel}</span>
+                            <div class="option-stack">
+                                <button type="button" class="option-row-btn ${state.shotOn === 'phone' ? 'selected' : ''}" data-act="shot" data-val="phone">
+                                    <span>${t.phoneText}</span>
+                                    <span>${t.includedText}</span>
+                                </button>
+                                <button type="button" class="option-row-btn ${state.shotOn === 'camera' ? 'selected' : ''}" data-act="shot" data-val="camera">
+                                    <span>${t.cameraText}</span>
+                                    <span>+ ₹1,500</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="calc-group">
+                            <span class="calc-label">${t.extrasLabel}</span>
+                            <button type="button" class="option-row-btn ${state.drone2k ? 'selected' : ''}" data-act="drone2k">
+                                <span>${t.droneText}</span>
+                                <span>+ ₹2,000</span>
+                            </button>
+                        </div>
+                    `;
+                } else if (cat.mode === 'simple_tiers') {
+                    html += `
+                        <div class="calc-group">
+                            <span class="calc-label">${t.pkgLabel}</span>
+                            <div class="option-stack">
+                                ${cat.tiers.map((tier, idx) => `
+                                    <button type="button" class="option-row-btn ${state.tierIdx === idx ? 'selected' : ''}" data-act="tier" data-idx="${idx}">
+                                        <span>${tier.name[state.lang]}</span>
+                                        <span>${tier.range}</span>
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else if (cat.mode === 'slabs') {
+                    html += `
+                        <div class="calc-group">
+                            <span class="calc-label">${t.pkgLabel}</span>
+                            <div class="option-row-btn selected" style="cursor:default;">
+                                <span>${cat.name[state.lang]}</span>
+                                <span>${cat.range}</span>
+                            </div>
+                            <div class="pill-row">
+                                ${cat.prices.map((p, pIdx) => `
+                                    <button type="button" class="price-pill ${state.priceIdx === pIdx ? 'selected' : ''}" data-act="price" data-idx="${pIdx}">
+                                        ${formatRupees(p)}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else if (cat.mode === 'prewedding') {
+                    const activeTier = cat.tiers[state.tierIdx] || cat.tiers[0];
+                    html += `
+                        <div class="calc-group">
+                            <span class="calc-label">${t.preWedPkgLabel}</span>
+                            <div class="option-stack">
+                                ${cat.tiers.map((tier, idx) => `
+                                    <button type="button" class="option-row-btn ${state.tierIdx === idx ? 'selected' : ''}" data-act="tier" data-idx="${idx}">
+                                        <span>${tier.name[state.lang]}</span>
+                                        <span>${tier.range}</span>
+                                    </button>
+                                `).join('')}
+                            </div>
+                            <div class="pill-row">
+                                ${activeTier.prices.map((p, pIdx) => `
+                                    <button type="button" class="price-pill ${state.priceIdx === pIdx ? 'selected' : ''}" data-act="price" data-idx="${pIdx}">
+                                        ${formatRupees(p)}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="calc-group">
+                            <span class="calc-label">${t.includedLabel}</span>
+                            <div class="included-box">
+                                ${activeTier.included[state.lang].map(line => `<div class="included-item">${line}</div>`).join('')}
+                            </div>
+                        </div>
+
+                        <div class="calc-group">
+                            <span class="calc-label">${t.albumOptLabel}</span>
+                            <button type="button" class="option-row-btn ${state.preAlbum ? 'selected' : ''}" data-act="pre-album">
+                                <span>${t.album20Text}</span>
+                                <span>+ ₹2,000</span>
+                            </button>
+                        </div>
+                    `;
+                } else if (cat.mode === 'wedding') {
+                    html += buildWeddingSectionHTML(t);
+                } else if (cat.mode === 'wedding_pre') {
+                    const preCat = categories.find(c => c.id === 'prewedding');
+                    const activePreTier = preCat.tiers[state.tierIdx] || preCat.tiers[0];
+                    html += `
+                        <div class="calc-group" style="padding-bottom:14px; border-bottom:1px solid var(--border-gold);">
+                            <div style="font-family:var(--font-display); font-size:0.95rem; font-weight:700; color:var(--gold-mid); margin-bottom:10px;">PRE-WEDDING</div>
+                            <span class="calc-label">${t.preWedPkgLabel}</span>
+                            <div class="option-stack">
+                                ${preCat.tiers.map((tier, idx) => `
+                                    <button type="button" class="option-row-btn ${state.tierIdx === idx ? 'selected' : ''}" data-act="tier" data-idx="${idx}">
+                                        <span>${tier.name[state.lang]}</span>
+                                        <span>${tier.range}</span>
+                                    </button>
+                                `).join('')}
+                            </div>
+                            <div class="pill-row">
+                                ${activePreTier.prices.map((p, pIdx) => `
+                                    <button type="button" class="price-pill ${state.priceIdx === pIdx ? 'selected' : ''}" data-act="price" data-idx="${pIdx}">
+                                        ${formatRupees(p)}
+                                    </button>
+                                `).join('')}
+                            </div>
+                            <div class="included-box" style="margin-top:12px;">
+                                ${activePreTier.included[state.lang].map(line => `<div class="included-item">${line}</div>`).join('')}
+                            </div>
+                            <div style="margin-top:12px;">
+                                <span class="calc-label">${t.albumOptLabel}</span>
+                                <button type="button" class="option-row-btn ${state.preAlbum ? 'selected' : ''}" data-act="pre-album">
+                                    <span>${t.album20Text}</span>
+                                    <span>+ ₹2,000</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div style="font-family:var(--font-display); font-size:0.95rem; font-weight:700; color:var(--gold-mid); margin:12px 0;">WEDDING</div>
+                        ${buildWeddingSectionHTML(t)}
+                    `;
+                } else if (cat.mode === 'included_slabs') {
+                    const boxTitle = cat.boxTitle ? cat.boxTitle[state.lang] : cat.name[state.lang];
+                    html += `
+                        <div class="calc-group">
+                            <span class="calc-label">${t.pkgLabel}</span>
+                            <div class="option-row-btn selected" style="cursor:default;">
+                                <span>${boxTitle}</span>
+                                <span>${cat.range}</span>
+                            </div>
+                            <div class="pill-row">
+                                ${cat.prices.map((p, pIdx) => `
+                                    <button type="button" class="price-pill ${state.priceIdx === pIdx ? 'selected' : ''}" data-act="price" data-idx="${pIdx}">
+                                        ${formatRupees(p)}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="calc-group">
+                            <span class="calc-label">${t.includedLabel}</span>
+                            <div class="included-box">
+                                ${cat.included[state.lang].map(line => `<div class="included-item">${line}</div>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                if (cat.samples && cat.samples.length) {
+                    html += `
+                        <div class="calc-group" style="margin-bottom:0;">
+                            <span class="calc-label">${t.samplesLabel}</span>
+                            <div class="sample-pills">
+                                ${cat.samples.map(s => `
+                                    <a href="#work" class="sample-pill-link">
+                                        <span class="play-badge-mini">▶</span>
+                                        <span>${s[state.lang]}</span>
+                                    </a>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                calcPanelEl.innerHTML = html;
+
+                calcPanelEl.querySelectorAll('button[data-act]').forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        const act = btn.dataset.act;
+                        if (act === 'tier') {
+                            state.tierIdx = Number(btn.dataset.idx);
+                            state.priceIdx = 0;
+                        } else if (act === 'price') {
+                            state.priceIdx = Number(btn.dataset.idx);
+                        } else if (act === 'shot') {
+                            state.shotOn = btn.dataset.val;
+                        } else if (act === 'drone2k') {
+                            state.drone2k = !state.drone2k;
+                        } else if (act === 'pre-album') {
+                            state.preAlbum = !state.preAlbum;
+                        } else if (act === 'wed-mode') {
+                            state.wedMode = btn.dataset.val;
+                        } else if (act === 'wed-tier') {
+                            state.wedTierIdx = Number(btn.dataset.idx);
+                            state.wedPriceIdx = 0;
+                        } else if (act === 'wed-price') {
+                            state.wedPriceIdx = Number(btn.dataset.idx);
+                        } else if (act === 'wed-custom') {
+                            const id = btn.dataset.id;
+                            if (state.wedCustomIds.includes(id)) {
+                                if (state.wedCustomIds.length > 1) {
+                                    state.wedCustomIds = state.wedCustomIds.filter(x => x !== id);
+                                }
+                            } else {
+                                state.wedCustomIds.push(id);
+                            }
+                        } else if (act === 'wed-drone') {
+                            state.wedDrone5k = !state.wedDrone5k;
+                        } else if (act === 'wed-reels') {
+                            state.wedReelsIdx = Number(btn.dataset.idx);
+                        } else if (act === 'wed-album') {
+                            state.wedAlbumIdx = Number(btn.dataset.idx);
+                        }
+                        renderPanel();
+                        updateTotal();
+                    });
+                });
+            }
+
+            function getWeddingSummary() {
+                let sum = 0;
+                const details = [];
+                if (state.wedMode === 'ready') {
+                    const wt = weddingReadyTiers[state.wedTierIdx] || weddingReadyTiers[0];
+                    const p = wt.prices[state.wedPriceIdx] || wt.prices[0];
+                    sum += p;
+                    details.push(`Wedding (${wt.name.en}): ${formatRupees(p)}`);
+                } else {
+                    weddingCustomEvents.forEach((ev) => {
+                        if (state.wedCustomIds.includes(ev.id)) {
+                            sum += ev.price;
+                            details.push(`${ev.name.en}: ${formatRupees(ev.price)}`);
+                        }
+                    });
+                }
+                if (state.wedDrone5k) {
+                    sum += 5000;
+                    details.push('Drone Shots: +₹5,000');
+                }
+                const reel = reelsOptions[state.wedReelsIdx];
+                if (reel && reel.price > 0) {
+                    sum += reel.price;
+                    details.push(`Reels (${reel.label.en}): +${formatRupees(reel.price)}`);
+                }
+                const alb = albumOptions[state.wedAlbumIdx];
+                if (alb && alb.price > 0) {
+                    sum += alb.price;
+                    details.push(`Album (${alb.label.en}): +${formatRupees(alb.price)}`);
+                }
+                return { sum, details };
+            }
+
+            function updateTotal() {
+                const cat = categories.find(c => c.id === state.catId) || categories[0];
+                let total = 0;
+
+                if (cat.mode === 'delivery') {
+                    const tier = cat.tiers[state.tierIdx] || cat.tiers[0];
+                    total += tier.prices[state.priceIdx] || tier.prices[0];
+                    if (state.shotOn === 'camera') total += 1500;
+                    if (state.drone2k) total += 2000;
+                } else if (cat.mode === 'simple_tiers') {
+                    const tier = cat.tiers[state.tierIdx] || cat.tiers[0];
+                    total += tier.prices[0];
+                } else if (cat.mode === 'slabs' || cat.mode === 'included_slabs') {
+                    total += cat.prices[state.priceIdx] || cat.prices[0];
+                } else if (cat.mode === 'prewedding') {
+                    const tier = cat.tiers[state.tierIdx] || cat.tiers[0];
+                    total += tier.prices[state.priceIdx] || tier.prices[0];
+                    if (state.preAlbum) total += 2000;
+                } else if (cat.mode === 'wedding') {
+                    total += getWeddingSummary().sum;
+                } else if (cat.mode === 'wedding_pre') {
+                    const preCat = categories.find(c => c.id === 'prewedding');
+                    const preTier = preCat.tiers[state.tierIdx] || preCat.tiers[0];
+                    total += preTier.prices[state.priceIdx] || preTier.prices[0];
+                    if (state.preAlbum) total += 2000;
+                    total += getWeddingSummary().sum;
+                }
+
+                totalValueEl.textContent = formatRupees(total);
+                return total;
+            }
+
+            function updateStaticLabels() {
+                const t = i18n[state.lang];
+                langToggleBtn.textContent = t.toggleBtn;
+                document.getElementById('pkg-eyebrow').textContent = t.eyebrow;
+                document.getElementById('pkg-heading').textContent = t.heading;
+                document.getElementById('select-cat-label').textContent = t.selectCat;
+                document.getElementById('est-total-label').textContent = t.estTotal;
+                document.getElementById('calc-book-text').textContent = t.bookWhatsapp;
+                document.getElementById('sticky-wa-btn').textContent = t.stickyWa;
+                document.getElementById('sticky-call-btn').textContent = t.stickyCall;
+            }
+
+            function renderCalculator() {
+                updateStaticLabels();
+                renderCategoryGrid();
+                renderPanel();
+                updateTotal();
+            }
+
+            langToggleBtn.addEventListener('click', () => {
+                state.lang = state.lang === 'en' ? 'hi' : 'en';
+                renderCalculator();
+            });
+
+            document.getElementById('calc-whatsapp-btn').addEventListener('click', () => {
+                const cat = categories.find(c => c.id === state.catId) || categories[0];
+                const finalTotal = updateTotal();
+                const lines = [`*Category:* ${cat.name.en}`];
+
+                if (cat.mode === 'delivery') {
+                    const tier = cat.tiers[state.tierIdx] || cat.tiers[0];
+                    const base = tier.prices[state.priceIdx] || tier.prices[0];
+                    lines.push(`*Package:* ${tier.name.en} (${formatRupees(base)})`);
+                    lines.push(`*Shot On:* ${state.shotOn === 'camera' ? 'Camera (+₹1,500)' : 'Phone (Included)'}`);
+                    if (state.drone2k) lines.push('*Extras:* Drone shots (+₹2,000)');
+                } else if (cat.mode === 'simple_tiers') {
+                    const tier = cat.tiers[state.tierIdx] || cat.tiers[0];
+                    lines.push(`*Package:* ${tier.name.en} (${formatRupees(tier.prices[0])})`);
+                } else if (cat.mode === 'slabs' || cat.mode === 'included_slabs') {
+                    const base = cat.prices[state.priceIdx] || cat.prices[0];
+                    lines.push(`*Selected Slab:* ${formatRupees(base)}`);
+                } else if (cat.mode === 'prewedding') {
+                    const tier = cat.tiers[state.tierIdx] || cat.tiers[0];
+                    const base = tier.prices[state.priceIdx] || tier.prices[0];
+                    lines.push(`*Pre-Wedding:* ${tier.name.en} (${formatRupees(base)})`);
+                    if (state.preAlbum) lines.push('*Album:* 20-sheet photo album (+₹2,000)');
+                } else if (cat.mode === 'wedding') {
+                    lines.push(...getWeddingSummary().details);
+                } else if (cat.mode === 'wedding_pre') {
+                    const preCat = categories.find(c => c.id === 'prewedding');
+                    const preTier = preCat.tiers[state.tierIdx] || preCat.tiers[0];
+                    const preBase = preTier.prices[state.priceIdx] || preTier.prices[0];
+                    lines.push(`*Pre-Wedding:* ${preTier.name.en} (${formatRupees(preBase)})`);
+                    if (state.preAlbum) lines.push('*Pre-Wedding Album:* 20-sheet photo album (+₹2,000)');
+                    lines.push(...getWeddingSummary().details);
+                }
+
+                const message = `Hello *Anurag* (@shoot_anurag)! 👑🎥\nI want to book this package:\n\n${lines.join('\n')}\n\n*Estimated Total:* ${formatRupees(finalTotal)}\n\nPlease confirm availability!`;
+                window.open('https://wa.me/919302762220?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
+            });
+
+            renderCalculator();
+        })();
+    </script>
+</body>
+</html>
